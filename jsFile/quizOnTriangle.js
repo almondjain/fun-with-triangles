@@ -23,16 +23,17 @@ const correctAnswers = [
 function calculateScore() {
     console.log('Inside submit button');
     const formResults = new FormData(quizform);
-    let score = 0,index = 0;
+    let score = 0,
+        index = 0;
 
     for (let value of formResults.values()) {
-      if (value === correctAnswers[index]) {
-        score = score + 1;
-      }
-      console.log('index:',index,'score:',score);
-      index++;
+        if (value === correctAnswers[index]) {
+            score = score + 1;
+        }
+        console.log('index:', index, 'score:', score);
+        index++;
     }
-    
+
     output.innerText = "Your score is " + score;
 }
 
